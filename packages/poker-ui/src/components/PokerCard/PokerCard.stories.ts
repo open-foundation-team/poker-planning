@@ -23,6 +23,7 @@ export const Primary: Story = {
   args: {
     value: 4,
     isFlipped: false,
-    isActive: false
+    isActive: false,
+    isHoverable: true
   },
 };

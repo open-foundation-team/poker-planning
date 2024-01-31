@@ -3,7 +3,8 @@
 .pokercard-styled {
 
   position: relative;
-  transition: all .5s;
+  transition: all .2s;
+  font-size: 1.2rem;
 
   .card-front {
     display: flex;
@@ -47,12 +48,12 @@
     }
   }
 
-  &:hover,
   &.active {
     transform: translateY(-.75rem);
 
     .card-front {
-      background: aliceblue;
+      background: #223151;
+      color: #fff;
     }
   }
 
@@ -60,6 +61,18 @@
     .card-front {
       background: #E8E9EA;
       border-color: #E8E9EA;
+    }
+  }
+
+  &.hoverable {
+    cursor: pointer;
+  }
+
+  &.hoverable:not(.active):hover {
+    transform: translateY(-.25rem);
+
+    .card-front {
+      background: aliceblue;
     }
   }
 }
