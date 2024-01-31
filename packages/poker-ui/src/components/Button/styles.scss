@@ -1,0 +1,42 @@
+@import '../styles/index.scss';
+
+.button-styled {
+  padding: .5rem 1rem;
+  border: 2px solid;
+  border-color: #223151;
+  border-radius: .35rem;
+
+  background: none;
+  color: #223151;
+
+  transition: all .2s;
+
+  // Alterante states
+  &:hover {
+    background-color: aliceblue;
+    border-color: #223151dd;
+    cursor: pointer;
+  }
+
+  // Mode styling
+  &.primary {
+    background: #223151;
+    color: #fff;
+
+    &:hover {
+      background-color: #223151dd;
+      border-color: #223151dd;
+    }
+  }
+
+  // Size styling
+  &.small {
+    padding: .25rem .5rem;
+    font-size: .8rem;
+  }
+
+  &.large {
+    padding: .75rem 1.25rem;
+    font-size: 1.2rem;
+  }
+}

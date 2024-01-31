@@ -1,0 +1,72 @@
+@import '../styles/index.scss';
+
+.pokercard-styled {
+
+  position: relative;
+  transition: all .5s;
+
+  .card-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+  }
+
+  .card-back {
+    transform: rotateY(.5turn);
+    background-size: 17px 17px;
+    background: linear-gradient(45deg, #3993ff 12%, transparent 0, transparent 88%, #3993ff 0),
+      linear-gradient(135deg, transparent 37%, #1a7bf2 0, #1a7bf2 63%, transparent 0),
+      linear-gradient(45deg, transparent 37%, #3993ff 0, #3993ff 63%, transparent 0),
+      #74b3ff;
+  }
+
+  .card-front,
+  .card-back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    border: 2px solid;
+    border-color: #223151;
+    border-radius: .35rem;
+
+    transition: transform .5s, background .2s;
+  }
+
+  &.flipped {
+
+    .card-front {
+      transform: rotateY(.5turn);
+    }
+
+    .card-back {
+      transform: rotateY(1turn);
+    }
+  }
+
+  &:hover,
+  &.active {
+    transform: translateY(-.75rem);
+
+    .card-front {
+      background: aliceblue;
+    }
+  }
+
+  &.no-value {
+    .card-front {
+      background: #E8E9EA;
+      border-color: #E8E9EA;
+    }
+  }
+}
+
+.pokercard-styled,
+.card-front,
+.card-back {
+  height: 5rem;
+  width: 3.5rem;
+}
