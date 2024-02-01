@@ -3,7 +3,7 @@
 .pokercard-styled {
 
   position: relative;
-  transition: all .2s;
+  transition: all 0.2s cubic-bezier(0.70, -0.70, 0.70, 1.30);
   font-size: 1.2rem;
 
   .card-front {

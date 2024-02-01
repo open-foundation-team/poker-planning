@@ -1,0 +1,44 @@
+@import '../styles/index.scss';
+
+.pokertable-styled {
+  display: inline-grid;
+  grid-template-areas:
+    "left top right"
+    "left table right"
+    "left bottom right";
+  grid-template-columns: 10rem 1fr 10rem;
+  grid-template-rows: 5rem 1fr 5rem;
+  grid-gap: 1rem;
+
+  .seating-top {
+    grid-area: top;
+  }
+
+  .seating-bottom {
+    grid-area: bottom;
+  }
+
+  .seating-left {
+    grid-area: left;
+  }
+
+  .seating-right {
+    grid-area: right;
+  }
+
+  .table {
+    grid-area: table;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 350px;
+    height: 150px;
+
+    background: #e9ebee;
+    color: #fff;
+
+    border-radius: .35rem;
+  }
+}
