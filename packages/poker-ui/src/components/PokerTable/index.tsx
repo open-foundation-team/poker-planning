@@ -15,6 +15,7 @@ interface Player {
 // PokerTable interface declaration
 interface PokerTableProps {
   players: Player[];
+  isRevealed?: boolean;
 }
 
 // Seating area interface
@@ -27,7 +28,8 @@ interface SeatingAreaType {
 
 
 export const PokerTable = ({
-  players
+  players,
+  isRevealed = false
 }: PokerTableProps) => {
 
   // Player seating state
@@ -50,7 +52,7 @@ export const PokerTable = ({
         <PokerCard
           name={player.name}
           value={player.value}
-          isFlipped
+          isFlipped={!isRevealed}
           key={idx}
         />
       );
@@ -58,7 +60,7 @@ export const PokerTable = ({
         <PokerCard
           name={player.name}
           value={player.value}
-          isFlipped
+          isFlipped={!isRevealed}
           key={idx}
         />
       );
@@ -66,7 +68,7 @@ export const PokerTable = ({
         <PokerCard
           name={player.name}
           value={player.value}
-          isFlipped
+          isFlipped={!isRevealed}
           key={idx}
         />
       );
@@ -74,7 +76,7 @@ export const PokerTable = ({
         <PokerCard
           name={player.name}
           value={player.value}
-          isFlipped
+          isFlipped={!isRevealed}
           key={idx}
         />
       );
@@ -88,7 +90,7 @@ export const PokerTable = ({
   // Update player seating on load
   useEffect(() => {
     seatPlayers(players);
-  }, [players]);
+  }, [players, isRevealed]);
 
   // Calculate points
   const totalPoints = players.reduce((sum: number, player: Player) => {
