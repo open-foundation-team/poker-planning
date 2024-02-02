@@ -18,7 +18,7 @@ interface PokerTableProps {
 }
 
 // Seating area interface
-type SeatingAreaType = {
+interface SeatingAreaType {
   top: React.ReactElement[];
   bottom: React.ReactElement[];
   left: React.ReactElement[];
@@ -48,6 +48,7 @@ export const PokerTable = ({
     playerArray.forEach((player, idx) => {
       if (newSeating.bottom.length <= newSeating.top.length && newSeating.bottom.length < 3) return newSeating.bottom.push(
         <PokerCard
+          name={player.name}
           value={player.value}
           isFlipped
           key={idx}
@@ -55,6 +56,7 @@ export const PokerTable = ({
       );
       if (newSeating.top.length === newSeating.bottom.length - 1 && newSeating.top.length < 3) return newSeating.top.push(
         <PokerCard
+          name={player.name}
           value={player.value}
           isFlipped
           key={idx}
@@ -62,6 +64,7 @@ export const PokerTable = ({
       );
       if (newSeating.left.length <= newSeating.right.length && newSeating.top.length >= 3) return newSeating.left.push(
         <PokerCard
+          name={player.name}
           value={player.value}
           isFlipped
           key={idx}
@@ -69,6 +72,7 @@ export const PokerTable = ({
       );
       if (newSeating.right.length <= newSeating.left.length && newSeating.bottom.length >= 3) return newSeating.right.push(
         <PokerCard
+          name={player.name}
           value={player.value}
           isFlipped
           key={idx}

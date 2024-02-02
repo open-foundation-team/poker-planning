@@ -3,6 +3,7 @@ import './styles.scss';
 
 // PokerCard interface declaration
 interface PokerCardProps {
+  name?: string;
   value?: number;
   isFlipped?: boolean;
   isActive?: boolean;
@@ -12,6 +13,7 @@ interface PokerCardProps {
 
 
 export const PokerCard = ({
+  name,
   value,
   isFlipped = false,
   isActive = false,
@@ -25,14 +27,19 @@ export const PokerCard = ({
   const hoverableClass = isHoverable ? 'hoverable' : null;
 
   return (
-    <div
-      className={["pokercard-styled", noValueClass, flippedClass, activeClass, hoverableClass].join(' ')}
-      onClick={onClick}
-    >
-      <div className="card-front">
-        {value}
+    <div className="pokercard-wrapper">
+      <div
+        className={["pokercard-styled", noValueClass, flippedClass, activeClass, hoverableClass].join(' ')}
+        onClick={onClick}
+      >
+        <div className="card-front">
+          {value}
+        </div>
+        <div className="card-back" />
       </div>
-      <div className="card-back" />
+      {name &&
+        <p className="pokerplayer-name">{name}</p>
+      }
     </div>
   );
 };
