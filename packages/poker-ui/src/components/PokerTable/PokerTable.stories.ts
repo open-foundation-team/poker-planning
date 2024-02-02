@@ -24,7 +24,35 @@ export const Primary: Story = {
     players: [
       {
         name: 'Christian',
+        value: 3
+      },
+      {
+        name: 'Pedro',
+        value: 3
+      },
+      {
+        name: 'Justo',
+        value: 2
+      },
+      {
+        name: 'David G.',
         value: 4
+      },
+      {
+        name: 'Mr. Nustik',
+        value: 2
+      },
+      {
+        name: 'Antonio O.',
+        value: 1
+      },
+      {
+        name: 'Nono',
+        value: 5
+      },
+      {
+        name: 'M. Chico',
+        value: 2
       }
     ]
   },

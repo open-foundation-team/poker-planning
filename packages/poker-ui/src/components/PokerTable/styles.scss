@@ -6,9 +6,24 @@
     "left top right"
     "left table right"
     "left bottom right";
-  grid-template-columns: 10rem 1fr 10rem;
+  grid-template-columns: 4rem 1fr 4rem;
   grid-template-rows: 5rem 1fr 5rem;
   grid-gap: 1rem;
+
+  .seating-top,
+  .seating-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .seating-left,
+  .seating-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 
   .seating-top {
     grid-area: top;
