@@ -89,4 +89,14 @@
     height: 5rem;
     width: 3.5rem;
   }
+
+  @media all and (max-width: 425px) {
+
+    .pokercard-styled,
+    .card-front,
+    .card-back {
+      height: 3.75rem;
+      width: 2.75rem;
+    }
+  }
 }
